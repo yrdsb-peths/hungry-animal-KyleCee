@@ -14,6 +14,33 @@ public class Fish extends Actor
      */
     public void act()
     {
-        move(1);
+        if(Greenfoot.isKeyDown("d"))
+        {
+            move(10);
+        }
+        
+        if (Greenfoot.isKeyDown("a"))
+        {
+            move(-10);
+        }
+        
+        if (Greenfoot.isKeyDown("s"))
+        {
+            int x = getX();
+            int y = getY();
+            setLocation(x, y + 10);
+        }
+        
+        if (Greenfoot.isKeyDown("w"))
+        {
+            int x = getX();
+            int y = getY();
+            setLocation(x, y - 10);
+        }
+        
+        if (isTouching(Apple.class))
+        {
+            removeTouching(Apple.class);
+        }
     }
 }

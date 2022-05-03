@@ -19,7 +19,10 @@ public class MyWorld extends World
         super(600, 400, 1); 
         
         Fish f = new Fish();
-        addObject (f, 200, 100);
+        addObject (f, 300, 350);
+        
+        Apple a = new Apple();
+        addObject (a, 300, 50);
         
     }
 }
