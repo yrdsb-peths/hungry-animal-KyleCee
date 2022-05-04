@@ -41,6 +41,8 @@ public class Fish extends Actor
         if (isTouching(Apple.class))
         {
             removeTouching(Apple.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnApple();
         }
     }
 }

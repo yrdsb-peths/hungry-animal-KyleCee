@@ -21,8 +21,15 @@ public class MyWorld extends World
         Fish f = new Fish();
         addObject (f, 300, 350);
         
-        Apple a = new Apple();
-        addObject (a, 300, 50);
+        spawnApple();
         
+    }
+    
+    public void spawnApple()
+    {
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        Apple a = new Apple();
+        addObject (a, x, y);
     }
 }
