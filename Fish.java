@@ -16,33 +16,39 @@ public class Fish extends Actor
     {
         if(Greenfoot.isKeyDown("d"))
         {
-            move(10);
+            move(4);
         }
         
         if (Greenfoot.isKeyDown("a"))
         {
-            move(-10);
+            move(-4);
         }
         
         if (Greenfoot.isKeyDown("s"))
         {
             int x = getX();
             int y = getY();
-            setLocation(x, y + 10);
+            setLocation(x, y + 4);
         }
         
         if (Greenfoot.isKeyDown("w"))
         {
             int x = getX();
             int y = getY();
-            setLocation(x, y - 10);
+            setLocation(x, y - 4);
         }
         
+        eat();
+    }
+    public void eat()
+    {
         if (isTouching(Apple.class))
         {
             removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
+            world.increaseScore();
             world.spawnApple();
+            
         }
     }
 }
