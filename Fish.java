@@ -8,10 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Fish extends Actor
 {
-    /**
-     * Act - do whatever the Fish wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    GreenfootSound fishSound = new GreenfootSound("fishbubbling.mp3");
+    
     public void act()
     {
         if(Greenfoot.isKeyDown("d"))
@@ -44,11 +42,12 @@ public class Fish extends Actor
     {
         if (isTouching(Apple.class))
         {
+            
             removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
             world.spawnApple();
-            
+            fishSound.play();
         }
     }
 }
