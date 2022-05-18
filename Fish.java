@@ -9,7 +9,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Fish extends Actor
 {
     GreenfootSound fishSound = new GreenfootSound("fishbubbling.mp3");
+    GreenfootImage[] idle = new GreenfootImage[6];
     
+    public Fish()
+    {
+        for (int i = 1; i < 6; i++)
+        {
+            idle[i] = new GreenfootImage("images/idleani/idle" + i + ".png");
+        }
+        setImage(idle[1]);
+    }
+    
+    
+    int imageIndex = 1;
+    public void animate()
+    {
+        setImage(idle[imageIndex]);
+        imageIndex = (imageIndex + 1) % idle.length;
+    }
     public void act()
     {
         if(Greenfoot.isKeyDown("d"))
@@ -37,6 +54,8 @@ public class Fish extends Actor
         }
         
         eat();
+        
+        animate();
     }
     public void eat()
     {
