@@ -35,6 +35,7 @@ public class TitleClass extends World
             Greenfoot.setWorld(gameWorld);
         }
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -47,5 +48,9 @@ public class TitleClass extends World
         addObject(fish2,188,119);
         Fish fish3 = new Fish();
         addObject(fish3,261,37);
+        Label label = new Label("use WASD to move", 50);
+        addObject(label,283,312);
+        label.setLocation(180,308);
+        label.setLocation(294,313);
     }
 }
